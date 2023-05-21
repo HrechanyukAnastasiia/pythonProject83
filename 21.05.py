@@ -1,7 +1,7 @@
 import random
 class Animal:
     def __init__(self, species, name, age, health, hunger, happiness):
-        super().init()
+        super().__init__()
         self.species = species
         self.name = name
         self.age = age
@@ -32,13 +32,28 @@ class Animal:
         return f" {self.species} - {self.name} ({self.age} years old) \n" \
                f"Health: {self.health}\nHunger: {self.hunger}\nHappiness: {self.happiness}\n"
 
-def feed_all(self):
-    for animal in self.animals:
-        animal.eat()
 
-def str(self):
-    return "\n".join([str(animal) for animal in self.animals])
+class zoo:
+    def __init__(self):
+        super().__init__()
+        self.animals = []
 
+    def add_animal(self, animal):
+        self.animals.append(animal)
+    def remove_animal(self, animal):
+        if animal in self.animals:
+            self.animals.remove(animal)
+    def feed_all(self):
+        for animal in self.animals:
+            animal.eat()
+    def play_with(self, animal):
+        if animal in self.animals:
+            animal.play()
+    def grow_all(self):
+        for animal in self.animals:
+            animal.grow()
+    def str(self):
+        return "\n".join([str(animal) for animal in self.animals])
 def save_zoo_state (zoo, day):
     filename = f"Day_{day}.txt"
     with open(filename, "w") as file:
